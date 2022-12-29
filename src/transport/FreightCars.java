@@ -66,6 +66,10 @@ public class FreightCars extends Transport<DriverC> implements Competing{
         System.out.println("У грузового автомобиля - " + getFreightCarsBodyType());
     }
 
+    public void diagnostics(){
+        System.out.println("Грузовик проходит диагностику");
+    }
+
     @Override
     public String toString() {
         if (freightCarsBodyType == null){

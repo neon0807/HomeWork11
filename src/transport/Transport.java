@@ -59,4 +59,8 @@ public abstract class Transport<T> {
 
     public abstract void printType();
 
+    public void diagnostics(){
+        System.out.println("Прохожу диагностику");
+    }
+
 }

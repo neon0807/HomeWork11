@@ -58,6 +58,10 @@ public class Car extends Transport<DriverB> implements  Competing{
         System.out.println("У легкового автомобиля - " + bodyType);
     }
 
+    public void diagnostics(){
+        System.out.println("Автомобиль проходит диагностику");
+    }
+
 
 
     @Override

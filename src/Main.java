@@ -1,6 +1,7 @@
 import driver.DriverB;
 import driver.DriverC;
 import driver.DriverD;
+import driver.rightsException;
 import transport.Bus;
 import transport.Car;
 import transport.FreightCars;
@@ -15,7 +16,7 @@ import static transport.FreightCars.FreightCarsBodyType.*;
 public class Main {
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws rightsException {
 
         Car cars1 = new Car("LADA", "Granta", 1.7f, HETCHBACK);
         Car cars2 = new Car("Audi", "A8 50 L TDI quattro", 3.0f, SEDAN);
@@ -34,14 +35,13 @@ public class Main {
         FreightCars freightCars3 = new FreightCars("Volvo","FMX 8*4",4.8f, N3);
         FreightCars freightCars4 = new FreightCars("Man","TGS",3.5f, N2);
 
-        DriverB driver1 = new DriverB("Aaa",true,2);
-        DriverC driver2 = new DriverC("Bbb", true,5);
-        DriverD driver3 = new DriverD("Ccc",true,10);
+        DriverB driver1 = new DriverB("Aaa",true,2, "B");
+        DriverC driver2 = new DriverC("Bbb", true,5, null);
+        DriverD driver3 = new DriverD("Ccc",true,10, "D");
 
-        cars2.printType();
-        bus1.printType();
-        freightCars1.printType();
-        System.out.println(bus4);
+        driver1.start();
+        driver2.stop();
+        driver3.start();
 
 
 
