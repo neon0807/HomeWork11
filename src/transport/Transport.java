@@ -1,7 +1,5 @@
 package transport;
 
-import driver.DriverB;
-
 public abstract class Transport<T> {
 
     protected final String brand;
@@ -43,7 +41,9 @@ public abstract class Transport<T> {
         if (engineVolume <= 0 ){
             this.engineVolume = 1.5f;
         } else this.engineVolume = engineVolume;
+
     }
+
 
     public void start(){
         System.out.println("Начал движение");
@@ -56,5 +56,7 @@ public abstract class Transport<T> {
     public void race(){
         System.out.println(getDriverName() + " управляет автомобилем " + brand + " " + model + " и будет участвовать в гонках");
     }
+
+    public abstract void printType();
 
 }
