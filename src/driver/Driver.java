@@ -15,15 +15,23 @@ public class Driver {
     public Integer getExperience() {
         return experience;
     }
-
     public void setExperience(Integer experience) {
         this.experience = experience;
     }
 
-    public Driver(String driverName, boolean rights, Integer experience) {
+    public String typeRights;
+    public String getTypeRights() {
+        return typeRights;
+    }
+    public void setTypeRights(String typeRights) {
+        this.typeRights = typeRights;
+    }
+
+    public Driver(String driverName, boolean rights, Integer experience, String typeRights) {
         this.driverName = driverName;
         this.rights = rights;
         this.experience = experience;
+        this.typeRights = typeRights;
     }
 
     public void start(){
