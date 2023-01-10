@@ -7,15 +7,15 @@ public class DriverC extends Driver{
 
         if (typeRights == null){
             try {
-                throw new rightsException("Необхадимо указать тип прав");
-            } catch (rightsException e) {
+                throw new RightsException("Необхадимо указать тип прав");
+            } catch (RightsException e) {
                 throw new RuntimeException(e);
             }
         }
         if (typeRights != "C"){
             try {
-                throw new rightsException("Не подходящая категория прав");
-            } catch (rightsException e) {
+                throw new RightsException("Не подходящая категория прав");
+            } catch (RightsException e) {
                 throw new RuntimeException(e);
             }
         }
