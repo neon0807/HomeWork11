@@ -6,7 +6,9 @@ import transport.Transport;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static transport.Bus.Spaciousness.*;
 import static transport.Car.CarBodyType.*;
@@ -52,7 +54,7 @@ public class Main {
 
 
         DriverB driver1 = new DriverB("Aaa",true,2, "B");
-        DriverC driver2 = new DriverC("Bbb", true,5, null);
+        DriverC driver2 = new DriverC("Bbb", true,5, "C");
         DriverD driver3 = new DriverD("Ccc",true,10, "D");
 
         List<Driver> drivers = new ArrayList<>();
@@ -65,12 +67,29 @@ public class Main {
         Mechanic mechanic2 = new Mechanic("Петя", "ASD", "D");
         Mechanic mechanic3 = new Mechanic("Коля", "ZXC", "B,C,D");
 
+        Map<String,String> mechanics = new HashMap<>();
 
-        List<Mechanic> mechanics = new ArrayList<>();
-        mechanics.add(mechanic1);
-        mechanics.add(mechanic2);
-        mechanics.add(mechanic3);
+        if (mechanics.containsValue("Вася")){
+            System.out.println("Такой механик уже зарегистрирован!");
+        } else mechanics.put("LADA", "Вася");
 
+        if (mechanics.containsValue("Петя")){
+            System.out.println("Такой механик уже зарегистрирован!");
+        } else mechanics.put("Audi", "Петя");
+
+        if (mechanics.containsValue("Коля")){
+            System.out.println("Такой механик уже зарегистрирован!");
+        } else mechanics.put("BMW", "Коля");
+
+        if (mechanics.containsValue("Петя")){
+            System.out.println("Такой механик уже зарегистрирован!");
+        } else mechanics.put("KIA", "Петя");
+
+
+
+        for (Map.Entry<String, String> entry: mechanics.entrySet()) {
+            System.out.println("Автомобиль " + entry.getKey() + " Механик " + entry.getValue());
+        }
 
     }
 
