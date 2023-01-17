@@ -2,6 +2,8 @@ package driver;
 
 public class DriverC extends Driver{
 
+
+
     public DriverC(String driverName, boolean rights, Integer experience, String typeRights){
         super(driverName, rights, experience, typeRights);
 
@@ -19,5 +21,13 @@ public class DriverC extends Driver{
                 throw new RuntimeException(e);
             }
         }
+
+    }
+
+    @Override
+    public String toString() {
+        return "DriverC{" +
+                "driverName='" + driverName + '\'' +
+                '}';
     }
 }

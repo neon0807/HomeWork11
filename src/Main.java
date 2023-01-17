@@ -5,10 +5,7 @@ import transport.FreightCars;
 import transport.Transport;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static transport.Bus.Spaciousness.*;
 import static transport.Car.CarBodyType.*;
@@ -17,8 +14,6 @@ import static transport.FreightCars.FreightCarsBodyType.*;
 
 
 public class Main {
-
-
 
     public static void main(String[] args) throws RightsException {
 
@@ -57,10 +52,23 @@ public class Main {
         DriverC driver2 = new DriverC("Bbb", true,5, "C");
         DriverD driver3 = new DriverD("Ccc",true,10, "D");
 
-        List<Driver> drivers = new ArrayList<>();
+        Set<Driver> drivers = new HashSet<>();
         drivers.add(driver1);
         drivers.add(driver2);
         drivers.add(driver3);
+        drivers.add(driver2);
+
+        System.out.println(drivers);
+
+        List<Driver> items = new ArrayList<>();
+        Iterator<Driver> iter = items.iterator();
+
+        while (iter.hasNext()) {
+            Driver next = iter.next();
+            System.out.println(next);
+        }
+
+
 
 
         Mechanic mechanic1 = new Mechanic("Вася", "QWE", "B,C");

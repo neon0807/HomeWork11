@@ -1,5 +1,7 @@
 package driver;
 
+import java.util.Objects;
+
 public class Driver {
     protected final String driverName;
     public String getDriverName() {
@@ -44,5 +46,18 @@ public class Driver {
 
     public void refuelCar(){
         System.out.println("Заправить авто");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver driver = (Driver) o;
+        return rights == driver.rights && Objects.equals(driverName, driver.driverName) && Objects.equals(experience, driver.experience) && Objects.equals(typeRights, driver.typeRights);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(driverName, rights, experience, typeRights);
     }
 }
