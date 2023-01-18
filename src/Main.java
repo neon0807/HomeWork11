@@ -75,27 +75,27 @@ public class Main {
         Mechanic mechanic2 = new Mechanic("Петя", "ASD", "D");
         Mechanic mechanic3 = new Mechanic("Коля", "ZXC", "B,C,D");
 
-        Map<String,String> mechanics = new HashMap<>();
+        Map<Transport,Mechanic> mechanics = new HashMap<>();
 
-        if (mechanics.containsValue("Вася")){
+        if (mechanics.containsValue(mechanic1)){
             System.out.println("Такой механик уже зарегистрирован!");
-        } else mechanics.put("LADA", "Вася");
+        } else mechanics.put(car1, mechanic1);
 
-        if (mechanics.containsValue("Петя")){
+        if (mechanics.containsValue(mechanic2)){
             System.out.println("Такой механик уже зарегистрирован!");
-        } else mechanics.put("Audi", "Петя");
+        } else mechanics.put(car2, mechanic2);
 
-        if (mechanics.containsValue("Коля")){
+        if (mechanics.containsValue(mechanic3)){
             System.out.println("Такой механик уже зарегистрирован!");
-        } else mechanics.put("BMW", "Коля");
+        } else mechanics.put(car3, mechanic3);
 
-        if (mechanics.containsValue("Петя")){
+        if (mechanics.containsValue(mechanic2)){
             System.out.println("Такой механик уже зарегистрирован!");
-        } else mechanics.put("KIA", "Петя");
+        } else mechanics.put(car4, mechanic2);
 
 
 
-        for (Map.Entry<String, String> entry: mechanics.entrySet()) {
+        for (Map.Entry<Transport, Mechanic> entry: mechanics.entrySet()) {
             System.out.println("Автомобиль " + entry.getKey() + " Механик " + entry.getValue());
         }
 
